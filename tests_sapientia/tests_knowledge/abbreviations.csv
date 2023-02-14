@@ -1,0 +1,70 @@
+A/C,Aircraft
+ABD,Airbus Directive and Procedure
+APMU,Actuator Power Management Unit
+ATP,Acceptance Test Procedure
+BC,Bus Controller
+CDR,Critical Design Review
+CMS,Code Matière Société
+CoG,Centre of Gravity
+COTS,Component Off The Shelf
+CPU,Central Processing Unit
+CRI,Certification Review Item
+DAL,Development Assurance Level
+DDP,Declaration of Design and Performance
+DDR,Detailed Design Review
+ECU,Electronic Control Unit
+EFCS,Electric Flight Control System
+EM,Electric Motor
+EMA,Electromechanical Actuator
+EMC,ElectroMagnetic Compatibility
+EMI,Electro-Magnetic Interference
+FC,Flight Cycle
+FCC,Flight Control Computer
+FCS,Flight Control System
+FH,Flight Hour
+FMEA,Failure Modes and Effects Analysis
+FMES,Failure Modes and Effects Summary
+FPGA,Field-Programmable Gate Array
+FTA,Fault Tree Analysis
+GBA,Gear Box Assembly
+HIRF,High Intensity Radiated Field
+HPE,High Power Electronics
+HVDC,High Power Direct Current
+H/W,Hardware
+I/O,Input/Output
+IEEE,Institute of Electrical and Electronic Engineers
+LRI,In Line Replaceable Item
+LRU,In Line Replaceable Unit
+MFR,Supplier's Manufacturer Code
+MME,Maintainability/Maintenance Evaluation
+MTBF,Mean Time Between Failure
+MTBUR,Mean Time Between Unscheduled Removals
+M/H,Man-Hours
+NFF,No Fault Found
+NSR,New Short Range
+NVM,Non Volatile Memory
+N/A,Not applicable
+PBS,Product Breakdown Structure
+PCB,Printed Circuit Board
+PFCS,Primary Flight Control System
+P/N,Part Number
+PNR,Part Number
+POST,Power On Safety Test
+PSSA,Preliminary System Safety Assessment
+PTS,Purchaser Technical Specification
+QTP,Qualification Test Procedure
+QTR,Qualification Test Report
+RAM,Random Access Memory
+RT,Remote Terminal
+SBTU,Speed Brake Transducer Unit
+SDP,Supplier Development Plan
+SER,Serial number
+SES,Supplier Equipment Specification
+SRU,Shop Replaceable Unit
+SSA,System Safety Assessment
+S/W,Software
+TBA,To Be Answered (by the Supplier)
+TBC,To Be Confirmed (and agreed with Supplier)
+TBD,To Be Defined (and agreed with Supplier)
+TN,Technical Note
+UUT,Unit Under Test
