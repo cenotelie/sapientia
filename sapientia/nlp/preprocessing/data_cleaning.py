@@ -38,10 +38,11 @@ def group_lists_in_sentences(sentences):
     :return: sentences with grouped items from lists
     """
     grouped_sentences = []
-    bullet = False
     for sentence in sentences:
         if sentence.startswith("•") or sentence.startswith("-"):
             bullet = True
+        else:
+            bullet = False
         if bullet:
             if grouped_sentences:
                 new_sentence = grouped_sentences.pop() + " " + sentence
@@ -49,7 +50,6 @@ def group_lists_in_sentences(sentences):
             else:
                 grouped_sentences.append(sentence)
         else:
-            bullet = False
             grouped_sentences.append(sentence)
     return grouped_sentences
 
@@ -71,6 +71,8 @@ def sentences_cleaning(sentences):
         sent = sentence.replace("\n", "")
         sent = sent.replace("\"", "")
         sent = re.sub("Page [0-9]+ of [0-9]+", "", sent)
+        sent = re.sub("CONFIDENTIAL AND PROPRIETARY DOCUMENT", "", sent)
+        sent = sent.partition("CORAC GENOME - SPOILER ROTARY EMA SPECIFICATION")[0]
         sent = sent.lstrip()
         cleaned_sentences.append(sent)
     return cleaned_sentences

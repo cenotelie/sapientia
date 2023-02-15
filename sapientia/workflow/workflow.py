@@ -18,9 +18,9 @@ def create_training_data(source_dir, target_file):
     for file in files:
         content = parse(file)
         sentences = content.split(". ")
+        sentences = sentences_cleaning(sentences)
         sentences = sentences_fixing(sentences)
         sentences = group_lists_in_sentences(sentences)
-        sentences = sentences_cleaning(sentences)
         requirements = requirements_extraction(sentences)
         for requirement in requirements:
             training_data = "{ \"text\":" + "\"" + str(requirement) + "\"}\n"
