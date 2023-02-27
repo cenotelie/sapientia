@@ -1,0 +1,1 @@
+cprodigy drop ner_rels
