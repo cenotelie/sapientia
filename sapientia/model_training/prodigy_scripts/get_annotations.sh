@@ -1,2 +1,2 @@
 #!/bin/bash
-prodigy db-out ner_rels .
+prodigy db-out airbus_collins .

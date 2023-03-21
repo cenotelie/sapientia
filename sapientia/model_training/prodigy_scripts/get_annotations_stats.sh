@@ -1,3 +1,3 @@
 #!/bin/bash
-prodigy stats ner_rels -l
-prodigy progress ner_rels
+prodigy stats airbus_collins -l
+prodigy progress airbus_collins

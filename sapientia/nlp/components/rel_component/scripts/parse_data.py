@@ -7,28 +7,20 @@ from pathlib import Path
 from spacy.tokens import Span, DocBin, Doc
 from spacy.vocab import Vocab
 from wasabi import Printer
+from wasabi import Printer
 
 msg = Printer()
 
 SYMM_LABELS = ["Binds"]
 MAP_LABELS = {
-    #"SUBJECT": "Is",
-    #"COMPOSITION": "Includes",
-    #"FEATURE": "Does",
-    #"REGULATION": "Regulates",
-    #"COMMUNICATION": "Sends",
-    #"DOCUMENTATION": "Explains",
-    #"CONFORMANCE": "Complies",
-    #"REQUIREMENT": "Requires",
-    "Pos-Reg": "Regulates",
-    "Neg-Reg": "Regulates",
-    "Reg": "Regulates",
-    "No-rel": "Regulates",
-    "Binds": "Binds",
+    #"Pos-Reg": "Regulates",
+    #"Neg-Reg": "Regulates",
+    #"Reg": "Regulates",
+    #"No-rel": "Regulates",
+    #"Binds": "Binds",
+    "SUBJECT": "Is",
+    "DOCUMENTATION": "Explains",
 }
-
-
-
 def main(json_loc: Path, train_file: Path, dev_file: Path, test_file: Path):
     """Creating the corpus from the Prodigy annotations."""
     random.seed(0)

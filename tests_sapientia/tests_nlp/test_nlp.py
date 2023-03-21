@@ -1,6 +1,7 @@
 import unittest
+import spacy
 
-from sapientia.nlp.nlp import load_model, apply_model, tokenize, named_entity_recognition
+from sapientia.nlp.nlp import load_model, apply_model, tokenize, named_entity_recognition, export_rdf
 
 
 class TestNLP(unittest.TestCase):
@@ -27,6 +28,26 @@ class TestNLP(unittest.TestCase):
         self.assertEqual(named_entities[0]["end_char"], 5)
         self.assertEqual(named_entities[0]["label"], "ORG")
 
+    def test_relation_model(self):
+        model = "model-best"
+        text = "Apple is looking at buying U.K. startup for $1 billion"
+        nlp = load_model(model)
+        #doc = apply_model(nlp, text)
+        #named_entities = named_entity_recognition(doc)
+        #print(named_entities)
+
+    def test_export_rdf(self):
+        model = "en_core_web_sm"
+        text = "Apple is looking at buying U.K. startup for $1 billion"
+        nlp = load_model(model)
+        doc = apply_model(nlp, text)
+        named_entities = named_entity_recognition(doc)
+        export_rdf(named_entities)
+
+    def test_support(self):
+        nlp = spacy.load("en_core_web_trf")
+        doc = nlp("Apple shares rose on the news. Apple pie is delicious.")
+        print(doc)
 
 if __name__ == '__main__':
     unittest.main()

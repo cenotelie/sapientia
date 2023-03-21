@@ -127,8 +127,9 @@
     ],
     "ner":[
       "CARDINAL",
-      "CONDITION",
+      "COMPONENT",
       "DATE",
+      "DOCUMENT",
       "EVENT",
       "FAC",
       "GPE",
@@ -137,15 +138,13 @@
       "LOC",
       "MONEY",
       "NORP",
-      "OBJECT",
       "ORDINAL",
       "ORG",
       "PERCENT",
       "PERSON",
-      "POLICY",
+      "PROCESS",
       "PRODUCT",
       "QUANTITY",
-      "ROLE",
       "STANDARD",
       "TIME",
       "WORK_OF_ART"
@@ -185,6 +184,6 @@
     "ents_per_type":0.0,
     "speed":0.0,
     "tok2vec_loss":0.0,
-    "ner_loss":0.000000104
+    "ner_loss":0.0000000279
   }
 }

@@ -1,1 +1,1 @@
-cprodigy drop ner_rels
+prodigy drop airbus_collins

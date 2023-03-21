@@ -92,3 +92,15 @@ def get_vocab_length(nlp):
     :return: number of lexemes
     """
     return len(nlp.vocab)
+
+
+def export_rdf(named_entities):
+    """
+    Export RDF file
+    :param named_entities: named entities
+    :return: RDF
+    """
+    rdf = ""
+    for named_entity in named_entities:
+        print("_:" + named_entity["text"], "rdf:type", "_:" + named_entity["label"], ".")
+    return rdf
