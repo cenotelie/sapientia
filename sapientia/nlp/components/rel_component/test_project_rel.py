@@ -12,15 +12,16 @@ def test_rel_project():
     project_run(root, "all", capture=True)
 
 def test_load_model():
-    #model = "en_core_web_sm"
-    model = "training/model-best"
-    text = "Apple is looking at buying U.K. startup for $1 billion."
+    model = "en_core_web_sm"
+    #model = "training/model-best"
+    text = "Apple is looking at buying U.K. startup for $1 billion"
     nlp = spacy.load(model)
     doc = nlp(text)
     for ent in doc.ents:
         print(ent.text, ent.start_char, ent.end_char, ent.label_)
-    for rel in doc._.rel :
+    for rel in doc._.rel:
         print(rel)
+    print(len(nlp.vocab))
 
 if __name__ == '__main__':
     test_load_model()

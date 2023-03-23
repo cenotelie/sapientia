@@ -91,21 +91,29 @@ The relations are directed, except for CONNECTION and COLLABORATION. We use the 
 
 _Collaboration_ is a relation existing between two roles. 
 
-For example, the _Supplier_ **provides** technical requirements to the _Provider_.
+For example, the _Supplier_ **provides** technical specification to the _Provider_.
 
 COLLABORATION(Supplier, Provider)
 
-In this example, there exists another relation between _Supplier_ and _technical requirements_.
+In this example, there exists another relation between _Supplier_ and _technical specification_.
 
 _Collaboration_ is one of the few undirected relations.
 
 ### Provide
 
-Provide is a relation existing between a role and a document, hardware, system or component.
+_Provide_ is a relation existing between a role and a standard, document, hardware, system or component.
 
 For example, the _Supplier_ **provides** _technical requirements_ to the _Provider_. 
 
 PROVIDE(Supplier, technical requirements)
+
+### Defined by
+
+Defined by is a relation existing between standard and a document.
+
+For example, the _specific requirements_ are **defined** in the _technical specification_.
+
+DEFINED_BY(specific requirements, technical specification)
 
 ### Comply with
 

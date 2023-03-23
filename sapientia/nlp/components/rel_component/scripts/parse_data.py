@@ -13,13 +13,13 @@ msg = Printer()
 
 SYMM_LABELS = ["Binds"]
 MAP_LABELS = {
-    #"Pos-Reg": "Regulates",
-    #"Neg-Reg": "Regulates",
-    #"Reg": "Regulates",
-    #"No-rel": "Regulates",
-    #"Binds": "Binds",
-    "SUBJECT": "Is",
-    "DOCUMENTATION": "Explains",
+    "Pos-Reg": "Regulates",
+    "Neg-Reg": "Regulates",
+    "Reg": "Regulates",
+    "No-rel": "Regulates",
+    "Binds": "Binds",
+    #"SUBJECT": "Is",
+    #"DOCUMENTATION": "Explains",
 }
 def main(json_loc: Path, train_file: Path, dev_file: Path, test_file: Path):
     """Creating the corpus from the Prodigy annotations."""
