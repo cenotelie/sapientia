@@ -1,2 +1,2 @@
 #!/bin/bash
-prodigy db-out airbus_collins ../prodigy_annotations/collins_en/
+python3 -m prodigy db-out collins_en ../prodigy_annotations/collins_en/

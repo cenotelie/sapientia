@@ -12,16 +12,17 @@ from wasabi import Printer
 msg = Printer()
 
 # TODO: define your labels used for annotation either as "symmetrical" or "directed"
-SYMM_LABELS = ["Binds"]
-DIRECTED_LABELS = ["Regulates", "Impacts"]
+SYMM_LABELS = ["COLLABORATION", "CONNECTION"]
+DIRECTED_LABELS = ["COLLABORATION", "PROVIDE", "DEFINED_BY", "COMPLY_WITH", "COMPOSED_BY", "HAS_FEATURE", "HAS_VALUE",
+                   "PERFORM", "SUBJECT", "COMMUNICATE", "IN_CONDITION", "IN_PHASE", "CONTROL", "CONNECTION"]
 
 # TODO: define splits for train/dev/test. What is not in test or dev, will be used as train.
-test_portion = 0.2
-dev_portion = 0.3
+test_portion = 0.1#0.2
+dev_portion = 0.1#0.3
 
 # TODO: set this bool to False if you didn't annotate all relations in all sentences.
 # If it's true, entities that were not annotated as related will be used as negative examples.
-is_complete = True
+is_complete = False
 
 
 def main(json_loc: Path, train_file: Path, dev_file: Path, test_file: Path):

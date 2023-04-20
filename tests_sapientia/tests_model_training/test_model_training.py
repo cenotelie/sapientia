@@ -5,7 +5,7 @@ from sapientia.nlp.nlp import load_model, apply_model, named_entity_recognition
 
 class TestModelTraining(unittest.TestCase):
     def test_load_trained_model(self):
-        nlp = load_model("model/model-best")
+        nlp = load_model("models/collins_en")
         doc = apply_model(nlp, "Obama was born in Hawaii and was never involved in building EMEA.")
         ner = named_entity_recognition(doc)
         print(ner)

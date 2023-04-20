@@ -1,3 +1,4 @@
+#parse_data.py
 import json
 import random
 
@@ -7,20 +8,27 @@ from pathlib import Path
 from spacy.tokens import Span, DocBin, Doc
 from spacy.vocab import Vocab
 from wasabi import Printer
-from wasabi import Printer
 
 msg = Printer()
 
-SYMM_LABELS = ["Binds"]
+SYMM_LABELS = ["COLLABORATION", "CONNECTION"]
 MAP_LABELS = {
-    "Pos-Reg": "Regulates",
-    "Neg-Reg": "Regulates",
-    "Reg": "Regulates",
-    "No-rel": "Regulates",
-    "Binds": "Binds",
-    #"SUBJECT": "Is",
-    #"DOCUMENTATION": "Explains",
+    "COLLABORATION": "Collaborates",
+    "PROVIDE": "Provides", 
+    "DEFINED_BY": "Defined by",
+    "COMPLY_WITH": "Complies with", 
+    "COMPOSED_BY": "Composed by", 
+    "HAS_FEATURE": "Has feature", 
+    "HAS_VALUE": "Has value", 
+    "PERFORM": "Performs", 
+    "SUBJECT": "Subject", 
+    "COMMUNICATE": "Communicates", 
+    "IN_CONDITION": "In condition", 
+    "CONTROL": "Controls",
+    "CONNECTION": "Connects",
 }
+
+
 def main(json_loc: Path, train_file: Path, dev_file: Path, test_file: Path):
     """Creating the corpus from the Prodigy annotations."""
     random.seed(0)
@@ -126,3 +134,4 @@ def main(json_loc: Path, train_file: Path, dev_file: Path, test_file: Path):
 
 if __name__ == "__main__":
     typer.run(main)
+

@@ -1,0 +1,10 @@
+{
+  "labels":[
+    "COMPOSED_BY",
+    "DEFINED_BY",
+    "COMPLY_WITH",
+    "IN_PHASE",
+    "PROVIDE"
+  ],
+  "threshold":0.5
+}

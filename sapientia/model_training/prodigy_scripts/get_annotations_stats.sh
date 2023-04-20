@@ -1,3 +1,3 @@
 #!/bin/bash
-prodigy stats airbus_collins -l
-prodigy progress airbus_collins
+python3 -m prodigy stats collins_en -l
+python3 -m prodigy progress collins_en

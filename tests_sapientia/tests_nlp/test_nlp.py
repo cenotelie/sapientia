@@ -1,8 +1,9 @@
 import unittest
 import spacy
+import sapientia.nlp.components.rel_component.scripts.rel_model
+from sapientia.nlp.components.rel_component.scripts.rel_pipe import make_relation_extractor
 
 from sapientia.nlp.nlp import load_model, apply_model, tokenize, named_entity_recognition, export_rdf
-
 
 class TestNLP(unittest.TestCase):
 
@@ -29,12 +30,13 @@ class TestNLP(unittest.TestCase):
         self.assertEqual(named_entities[0]["label"], "ORG")
 
     def test_relation_model(self):
-        model = "model-best"
-        text = "Apple is looking at buying U.K. startup for $1 billion"
+        model = "rel_collins_en"
+        text = "Under supplier request, the Purchaser will provide documents identified in this section except the external standards available on the market "
         nlp = load_model(model)
-        #doc = apply_model(nlp, text)
-        #named_entities = named_entity_recognition(doc)
-        #print(named_entities)
+        doc = apply_model(nlp, text)
+        named_entities = named_entity_recognition(doc)
+        print(named_entities)
+        print(doc._.rel)
 
     def test_export_rdf(self):
         model = "en_core_web_sm"
