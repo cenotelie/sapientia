@@ -10,5 +10,6 @@ class TestLanguageDetection(unittest.TestCase):
     def test_detect_language_french(self):
         self.assertEqual(detect_language("Ce texte est écrit en français."), "fr")
 
+
 if __name__ == '__main__':
     unittest.main()

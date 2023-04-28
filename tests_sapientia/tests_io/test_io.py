@@ -14,5 +14,6 @@ class TestIO(unittest.TestCase):
         new_file = replace_extension("data/subdirectory/4.txt", ".doc")
         self.assertEqual(new_file, PosixPath("data/subdirectory/4.doc"))
 
+
 if __name__ == '__main__':
     unittest.main()

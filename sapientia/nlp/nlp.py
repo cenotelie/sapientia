@@ -94,13 +94,27 @@ def get_vocab_length(nlp):
     return len(nlp.vocab)
 
 
-def export_rdf(named_entities):
+def named_entities_to_triples(named_entities):
     """
-    Export RDF file
+    Export named entities to triples
     :param named_entities: named entities
-    :return: RDF
+    :return: triples
     """
-    rdf = ""
+    triples = []
     for named_entity in named_entities:
-        print("_:" + named_entity["text"], "rdf:type", "_:" + named_entity["label"], ".")
-    return rdf
+        triples.append("_:" + named_entity["text"] + " " + "rdf:type" + " " + "_:" + named_entity["label"])
+    return triples
+
+
+def relations_to_triples(relations, doc):
+    """
+    Export relations to triples
+    :param relations: relations
+    :param doc: text processed through NLP model (SpaCy)
+    :return: triples
+    """
+    triples = []
+    for rel in relations:
+        labels_list = relations[(rel[0], rel[1])]
+        triples.append(str(doc[rel[0]]) + " " + str(max(labels_list, key=lambda key: labels_list[key])) + " " + str(doc[rel[1]]))
+    return triples
