@@ -102,7 +102,7 @@ def named_entities_to_triples(named_entities):
     """
     triples = []
     for named_entity in named_entities:
-        triples.append("_:" + named_entity["text"] + " " + "rdf:type" + " " + "_:" + named_entity["label"])
+        triples.append("rdf:type" + "(" + "_:" + named_entity["text"] + ", ""_:" + named_entity["label"] + ")")
     return triples
 
 
@@ -116,5 +116,6 @@ def relations_to_triples(relations, doc):
     triples = []
     for rel in relations:
         labels_list = relations[(rel[0], rel[1])]
-        triples.append(str(doc[rel[0]]) + " " + str(max(labels_list, key=lambda key: labels_list[key])) + " " + str(doc[rel[1]]))
+        triples.append(str(max(labels_list, key=lambda key: labels_list[key])) + "(" + str(doc[rel[0]]) + "," +
+                       str(doc[rel[1]]) + ")")
     return triples

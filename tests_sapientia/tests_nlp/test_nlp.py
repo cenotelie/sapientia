@@ -44,8 +44,6 @@ class TestNLP(unittest.TestCase):
         text = "Under supplier request, the Purchaser will provide documents identified in this section except the external standards available on the market "
         nlp = load_model(model)
         doc = apply_model(nlp, text)
-        named_entities = named_entity_recognition(doc)
-        print(named_entities)
         relations = doc._.rel
         triples = relations_to_triples(relations, doc)
         print(triples)
