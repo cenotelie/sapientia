@@ -88,14 +88,15 @@ Natural languages such as _English_ or _French_.
 We identified the following relations : 
 
 - COLLABORATION
-- PROVIDE
+- RESPONSIBLE
+- PROVIDED
 - DEFINED_BY
 - COMPLY_WITH
 - COMPOSED_BY
 - HAS_FEATURE
 - HAS_VALUE
 - PERFORM
-- SUBJECT
+- OPERATION
 - COMMUNICATE
 - IN_CONDITION
 - IN_PHASE
@@ -114,15 +115,21 @@ COLLABORATION(Supplier, Provider)
 
 _Collaboration_ is one of the few undirected relations.
 
-### Provide
+### Responsible
 
-_Provide_ is a relation existing between a role and a standard, document, hardware, system, component, phase or process.
-,
-For example, the _Supplier_ **provides** _technical requirements_ to the _Provider_. 
+_Responsible_ is a relation existing between a role and a standard, document, hardware, system, component, phase or process.
 
-PROVIDE(Supplier, technical requirements)
+For example, the _Supplier_ shall **provide** _technical requirements_. 
 
-It should be noted that there exists a relations between _technical requirements_ and _Provider_ (SUBJECT).
+RESPONSIBLE(Supplier, technical requirements)
+
+### Provided
+
+_Provided_ is a relation existing between a standard, document, hardware, system, component, phase or a process and a role.
+
+For example, the Supplier **provides** _technical requirements_ to the _Provider_. 
+
+PROVIDED(technical requirements, Provider)
 
 ### Defined by
 
@@ -170,15 +177,15 @@ _Perform_ is a relation existing between hardware, a system or a component and a
 
 For example, the _sensor_ **performs** temperature monitoring.
 
-PERFORMS(sensor, temperature monitoring)
+PERFORM(sensor, temperature monitoring)
 
-### Subject
+### Operation
 
-_Subject_ is a relation existing between a process and a parameter.
+_Operation_ is a relation existing between a process and a parameter, hardware, system or component.
 
 For example, the sensor _monitors_ _temperature_.
 
-SUBJECT(monitors, temperature)
+OPERATION(monitors, temperature)
 
 ### Communicate
 
@@ -186,11 +193,11 @@ _Communicate_ is a relation existing between two hardware, systems or components
 
 For example, the _data bus_ **sends messages** to the _actuator_.
 
-COMMUNICATES(data bus, actuator)
+COMMUNICATE(data bus, actuator)
 
 ### In condition
 
-_In condition_ is a relation existing between a composant, a system or a hardware and a condition. 
+_In condition_ is a relation existing between a document, a process, a composant, a system or a hardware and a condition. 
 
 For example, the _door_ **is** _open_.
 
@@ -210,9 +217,13 @@ Control is a relation existing between components, systems or hardware.
 
 For example, the _electro-hydraulic servo valves_ **control** the movement of the _actuators_.
 
-CONTROL(electro-hydraylic servo valves, actuators)
+CONTROL(electro-hydraulic servo valves, actuators)
 
 ### Connection
 
 Connection is a relation existing between two components that are physically connected.
+
+For example, the _electro-hydraulic servo valves_ **are connected** to the _actuators_.
+
+CONNECTION(electro-hydraulic servo valves, actuators)
 
