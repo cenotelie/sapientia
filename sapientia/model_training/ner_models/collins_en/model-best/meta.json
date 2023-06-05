@@ -128,6 +128,7 @@
     "ner":[
       "CARDINAL",
       "COMPONENT",
+      "CONDITION",
       "CRITERIA",
       "DATE",
       "DOCUMENT",
@@ -142,6 +143,7 @@
       "NORP",
       "ORDINAL",
       "ORG",
+      "PARAMETER",
       "PERCENT",
       "PERSON",
       "PHASE",
@@ -152,6 +154,7 @@
       "STANDARD",
       "SYSTEM",
       "TIME",
+      "UNIT",
       "WORK_OF_ART"
     ]
   },
@@ -183,16 +186,16 @@
     "sents_r":0.0,
     "sents_f":0.0,
     "lemma_acc":0.0,
-    "ents_f":0.0,
-    "ents_p":0.0,
-    "ents_r":0.0,
+    "ents_f":0.7777777778,
+    "ents_p":0.6363636364,
+    "ents_r":1.0,
     "ents_per_type":{
-      "STANDARD":{
-        "p":0.0,
-        "r":0.0,
-        "f":0.0
+      "ORG":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
       },
-      "ROLE":{
+      "PROCESS":{
         "p":0.0,
         "r":0.0,
         "f":0.0
@@ -201,10 +204,30 @@
         "p":0.0,
         "r":0.0,
         "f":0.0
+      },
+      "SYSTEM":{
+        "p":0.5,
+        "r":1.0,
+        "f":0.6666666667
+      },
+      "COMPONENT":{
+        "p":0.75,
+        "r":1.0,
+        "f":0.8571428571
+      },
+      "ROLE":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
+      },
+      "HARDWARE":{
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
       }
     },
-    "speed":1323.9536668859,
+    "speed":4869.7223175623,
     "tok2vec_loss":0.0,
-    "ner_loss":26.526049457
+    "ner_loss":136.403044067
   }
 }

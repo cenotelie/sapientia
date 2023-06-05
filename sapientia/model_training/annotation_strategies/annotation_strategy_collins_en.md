@@ -102,8 +102,11 @@ We identified the following relations :
 - IN_PHASE
 - CONTROL
 - CONNECTION
+- ALTERNATIVE_LABEL
 
-The relations are directed, except for CONNECTION and COLLABORATION. We use the following notation : relation(named_entity_1, named_entity_2) to represent the relation from named_entity_1 to named_entity_2.
+The relations are directed, except for CONNECTION, COLLABORATION and ALTERNATIVE_LABEL. 
+
+We use the following notation : relation(named_entity_1, named_entity_2) to represent the relation from named_entity_1 to named_entity_2.
 
 ### Collaboration
 
@@ -125,7 +128,7 @@ RESPONSIBLE(Supplier, technical requirements)
 
 ### Provided
 
-_Provided_ is a relation existing between a standard, document, hardware, system, component, phase or a process and a role.
+_Provided_ is a relation existing between a standard, document, hardware, system, component, phase, parameter or a process and a role or a component.
 
 For example, the Supplier **provides** _technical requirements_ to the _Provider_. 
 
@@ -165,15 +168,23 @@ HAS_FEATURE(sensor, temperature)
 
 ### Has value
 
-_Has value_ is a relation existing between a parameter and a unit.
+_Has value_ is a relation existing between a parameter and a value.
 
-For example, the sensor has a _temperature_ **of** _11°C_.
+For example, the sensor has a _temperature_ **of** _11_°C.
 
-HAS_VALUE(temperature, 11°C)
+HAS_VALUE(temperature, 11)
+
+### In unit
+
+_In unit_ is a relation existing between a parameter and a unit.
+
+For example, the sensor has a _temperature_ **of** 11_°C_
+
+IN_UNIT(temperature, °C)
 
 ### Perform
 
-_Perform_ is a relation existing between hardware, a system or a component and a process.
+_Perform_ is a relation existing between hardware, a system, a component a process and a process.
 
 For example, the _sensor_ **performs** temperature monitoring.
 
@@ -227,3 +238,10 @@ For example, the _electro-hydraulic servo valves_ **are connected** to the _actu
 
 CONNECTION(electro-hydraulic servo valves, actuators)
 
+### Alternative label
+
+Alternative label is a relation existing between two annotations that represent the same entity.
+
+For example, the abbreviation _MON_ **stands for** _monitor lane_.
+
+ALTERNATIVE_LABEL(MON, monitor lane)
