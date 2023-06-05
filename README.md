@@ -80,3 +80,18 @@ We also provide a knowledge extraction component for specific tasks such as requ
 ### Knowledge representation
 
 We use RDF, which is an interoperable format, to output named entities and relation extracted from files. 
+
+## How to train a NER model 
+
+To train a NER model, execute model_training.sh script in /model_training/prodigy_scripts.
+
+## How to train a model for relation extraction
+
+To train a model for relation extraction, in /nlp/components/rel_component :
+
+1. Change /assets/annotations.json (replace with result of get_annotations.sh script in /model_training/prodigy_scripts)
+2. Delete /data/dev.spacy, /data/train.spacy, /data/test.spacy
+3. Delete /training/model-best/, /training/model-last/
+4. Execute `python3 -m spacy project assets`
+5. Execute `python3 -m spacy project run data`
+6. Execute model_training.sh
