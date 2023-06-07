@@ -144,7 +144,7 @@ DEFINED_BY(specific requirements, technical specification)
 
 ### Comply with
 
-_Comply with_ is a relation existing between an entity and a standard.
+_Comply with_ is a relation existing between a document, a role or an organisation and a standard or criteria.
 
 For example, the _technical specification_ **complies with** the _DO-178C_ norm.
 
@@ -208,7 +208,7 @@ COMMUNICATE(data bus, actuator)
 
 ### In condition
 
-_In condition_ is a relation existing between a document, a process, a composant, a system or a hardware and a condition. 
+_In condition_ is a relation existing between a document, a standard, a criteria, a process, a composant, a system or a hardware and a condition. 
 
 For example, the _door_ **is** _open_.
 

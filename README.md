@@ -83,15 +83,10 @@ We use RDF, which is an interoperable format, to output named entities and relat
 
 ## How to train a NER model 
 
-To train a NER model, execute model_training.sh script in /model_training/prodigy_scripts.
+To train a NER model, execute ner_model_training.sh script in /model_training/prodigy_scripts.
 
 ## How to train a model for relation extraction
 
-To train a model for relation extraction, in /nlp/components/rel_component :
-
-1. Change /assets/annotations.json (replace with result of get_annotations.sh script in /model_training/prodigy_scripts)
-2. Delete /data/dev.spacy, /data/train.spacy, /data/test.spacy
-3. Delete /training/model-best/, /training/model-last/
-4. Execute `python3 -m spacy project assets`
-5. Execute `python3 -m spacy project run data`
-6. Execute model_training.sh
+To train a model for relation extraction, in /nlp/components/rel_component, execute :
+- get_annotations.sh
+- relation_model_training.sh
