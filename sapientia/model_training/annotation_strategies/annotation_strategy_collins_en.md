@@ -92,6 +92,8 @@ We identified the following relations :
 - PROVIDED
 - DEFINED_BY
 - COMPLY_WITH
+- APPROVAL
+- REJECTION
 - COMPOSED_BY
 - HAS_FEATURE
 - HAS_VALUE
@@ -136,7 +138,7 @@ PROVIDED(technical requirements, Provider)
 
 ### Defined by
 
-Defined by is a relation existing between standard and a document.
+Defined by is a relation existing between a standard or a process and a document.
 
 For example, the _specific requirements_ are **defined** in the _technical specification_.
 
@@ -149,6 +151,22 @@ _Comply with_ is a relation existing between a document, a role or an organisati
 For example, the _technical specification_ **complies with** the _DO-178C_ norm.
 
 COMPLY_WITH(technical specification, DO-178C)
+
+### Approval 
+
+_Approval_ is a relation existing between a role and a document, standard, criteria, process, unit or phase.
+
+For example, the _equipment manufacturer_ **has approved** the _document_.
+
+APPROVAL(equipment manufacturer, document)
+
+### Rejection
+
+_Rejection_ is a relation existing between a role and a document, standard, criteria, process, unit or phase.
+
+For example, the _equipment manufacturer_ **has rejected** the _document_.
+
+REJECTION(equipment manufacturer, document)
 
 ### Composed by
 
@@ -208,7 +226,7 @@ COMMUNICATE(data bus, actuator)
 
 ### In condition
 
-_In condition_ is a relation existing between a document, a standard, a criteria, a process, a composant, a system or a hardware and a condition. 
+_In condition_ is a relation existing between a document, a standard, a criteria, a process, a component, a system or a hardware and a condition. 
 
 For example, the _door_ **is** _open_.
 

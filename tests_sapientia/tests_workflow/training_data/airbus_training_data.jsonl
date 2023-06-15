@@ -6,9 +6,9 @@
 { "text":"The equipment, the Supplier and the processes applied must comply with ABD0100 and any applicable documents"}
 { "text":"The equipment manufacturer responses will be treated with same degree of confidentiality by AIRBUS"}
 { "text":"The use of shall, should, must, will and may within the PTS shall observe the following rules: • The word SHALL in the text denotes a mandatory requirement of the PTS"}
-{ "text":"Health and Safety) and shall be complied with"}
+{ "text":"• The word MUST in the text is used for legislative or regulatory requirements (e.g. Health and Safety) and shall be complied with"}
 { "text":"TBA  To Be Answered (by the Supplier) TBC  To Be Confirmed (and agreed with Supplier) TBD  To Be Defined (and agreed with Supplier) TN  Technical Note UUT  Unit Under Test 1.3 Language The working language for all documentation, meetings and discussions shall be English Language using Aeronautical Terminology in common use, as requested in ABD0100.3.0 §1.2"}
-{ "text":"Under supplier request, the Purchaser will provide documents identified in this section except the external standards available on the market"}
+{ "text":"Under supplier requaaest, the Purchaser will provide documents identified in this section except the external standards available on the market"}
 { "text":"It should be noted that any referenced documents are for information only"}
 { "text":"If a document is identified as applicable then the Supplier shall comply with it"}
 { "text":"Where conflict occurs between referenced documents the Supplier shall obtain clarification from the Purchaser"}
@@ -32,13 +32,11 @@
 { "text":"(*) For the A320 demonstrator, EMA body will be fixed on an adaptation part"}
 { "text":"Electronic Control Unit (ECU): • Actuator shall comprise one (1) ECU controlled by FCC via µAFDX data bus and supplied by one (1) 540 VDC and one (1) 28 VDC • The ECU shall be designed as a sealed LRI • The ECU shall be self-contained fire in both normal and failure conditions • The ECU shall comprise two (2) computation units called command lane (COM) and monitor lane (MON) and one (1) High Power Electronics lane (HPE): • COM lane functions shall be to: - Perform actuator position servo loop according to FCC messages, - Collect, compute and provide data (sensor values, Booleans, ...) to FCC via µAFDX data bus,  - Perform action (enabling, inhibit actuator servo loop...) in response to FCC messages • MON lane functions shall be to:  - Collect and send sensor and computation values to FCC via µAFDX data bus, - Perform action (inhibit actuator servo-loop...) in response to FCC messages, - Perform Health-monitoring function • HPE lane functions shall be to: - Manage the electrical power of the motor • COM and MON lanes shall be able to exchange data via Internal Data Bus • The ECU shall comprise a dedicated NVM to store key parameters"}
 { "text":"• ECU shall provide internal links to communicate and transfer data to ECU, to ECU non-volatile memory (NVM) and actuator NVM • The ECU shall include a wireless connection that allows data loading during a maintenance task from and to the actuator NVM • The ECU shall be equipped with a RFID device • Electrical and mechanical segregation between COM and MON units of ECU shall be achieved • Electrical segregation between high and low power parts of ECU shall be achieved • The ECU COM and MON lane designs shall ensure the non -propagation of the oscillations coming from a same external power supply • High power elements of the ECU shall be compliant to Corona effects • The ECU sealing against ambient pressure cycling (breathing effects), humidity, moisture and icing shall be demonstrated by tests"}
-{ "text":"The sealing principle and design shall be supported by risk mitigation tests on an adequate demonstrator • The ECU shall be equipped with temperature sensors on hot points approved by purchaser • The ECU temperature measurements shall be provided to FCC via µAFDX data bus • ECU overheating shall be monitored and detected by FCC at temperatures of over TBA°C  • The supplier shall provision a mean to update COM and MON lane softwares using spare pins of COM interface and MON interface connectors • Any insulation loss (e.g"}
-{ "text":"housing) shall be avoided"}
+{ "text":"The sealing principle and design shall be supported by risk mitigation tests on an adequate demonstrator • The ECU shall be equipped with temperature sensors on hot points approved by purchaser • The ECU temperature measurements shall be provided to FCC via µAFDX data bus • ECU overheating shall be monitored and detected by FCC at temperatures of over TBA°C  • The supplier shall provision a mean to update COM and MON lane softwares using spare pins of COM interface and MON interface connectors • Any insulation loss (e.g. between high power voltage bar and housing) or any chafing between internal wires and other internal devices (e.g. housing) shall be avoided"}
 { "text":"Where it is not possible, it shall be minimized with additional attachment points or additional mechanical protections"}
 { "text":"Electrical harnesses:(if applicable) • Cables shall be secured at appropriate intervals to prevent chafing or other damage • All wires and bundles shall be supported sufficiently so that strain or load at the terminal(s) cannot cause joint failures • Cable bundles shall not be tied to adjacent electrical components or sub-assemblies • Wire size shall be chosen to be compatible with current carrying and voltage drop • All cable backshell shall be oriented downward • Any cable shall end with a drip loop before entering electrical panels, boxes, equipment and connector plates • High power harnesses shall be compliant to Corona effects • All harnesses shall be arc-tracking resistant • The electrical cable length, routing and/or the connector definition shall prevent cross connection • Any cable shall sustain: - a load of 50 daN during at least one minute at each point of the harness which can be used for a handhold; - a load of 100 daN during at least one minute at each point of the harnesses which can be used for a hanging man"}
 { "text":"Electric Motor (EM): • High power elements of the EM shall be compliant to Corona effects"}
-{ "text":"• The EM shall be equipped with temperature sensors on hot points approved by purchaser • The EM temperature measurements shall be provided to FCC by ECU via communication bus • EM overheating shall be monitored and detected by FCC at temperatures of over TBA°C • Any insulation loss (e.g"}
-{ "text":"housing) shall be avoided"}
+{ "text":"• The EM shall be equipped with temperature sensors on hot points approved by purchaser • The EM temperature measurements shall be provided to FCC by ECU via communication bus • EM overheating shall be monitored and detected by FCC at temperatures of over TBA°C • Any insulation loss (e.g. between phases or between a phase and housing) or any chafing between internal wires and other internal devices (e.g. housing) shall be avoided"}
 { "text":"Where it is not possible, it shall be minimized with additional attachment points or additional mechanical protections"}
 { "text":"Anti-extension device:  • The anti-extension device shall be sized to sustain anti-extension activation when EMA is moving at its maximum speed • The anti-extension device shall be able to sustain any torque without exceed the limit torque specified"}
 { "text":"Mechanical output position sensor: • The mechanical output position sensor shall be supplied by the ECU COM lane • Measurements of mechanical output position sensor shall be transmitted to the FCC via µAFDX data bus"}
@@ -76,7 +74,7 @@
 { "text":"For each failure the degradation of the unit will be analysed with its consequence for the system and aircraft by the Purchaser"}
 { "text":"If tests are needed at system level, the Supplier shall provide documentation, in order to enable the Purchaser to establish the technical repercussions to other PTS, their reasons, the affected LRI, as well as the induced signals external to the system, or exchanged within the system"}
 { "text":"2.1.5.3.2 Fault Management The supplier shall define the equipment tolerances to faults and show compliance with the requirements for safety"}
-{ "text":"The actuators internal monitoring (implemented in the operating S/W) which have an action on the actuator operation must be minimized (objective : none) and limited to system safety aspects ( e.g"}
+{ "text":"The actuators internal monitoring (implemented in the operating S/W) which have an action on the actuator operation must be minimized (objective : none) and limited to system safety aspects ( e.g. processor integrity.."}
 { "text":"The introduction of internal monitoring shall be submitted to the Purchaser for approval"}
 { "text":"In case of failure, if processor integrity is not guaranteed, and if needed for safety reasons, the variable BFSYS shall be set to TRUE to report the failure, otherwise it shall be set to FALSE"}
 { "text":"2.1.5.4 Data Loading  N/A 2.1.5.5 Health Monitoring (HM) Function Each actuator shall allow performing an Health Monitoring (HM) function based on internal sensor measurements and specific algorithms"}
@@ -87,10 +85,10 @@
 { "text":"A preliminary analysis shall be used to identify which failures can be considered as part of predictive maintenance tasks"}
 { "text":"Based on data stored in the Health Monitoring memory and the settled Health monitoring algorithm results, this Health monitoring function shall anticipate failures that could have an impact on actuator integrity"}
 { "text":"Using dedicated messages, this Health Monitoring function shall inform the Flight Control computer about the identified predictive maintenance task to perform • To estimate the remaining life time Based on data stored in the Health Monitoring memory and the settled Health monitoring algorithm results, this Health monitoring function shall provide a correct estimation of the remaining life time of the actuator and its main pieces"}
-{ "text":"This estimation may be based on life cycles, ...(e.g"}
+{ "text":"This estimation may be based on life cycles, ...(e.g. reference damage criterion compared to measured one from f(t) or life cycles)"}
 { "text":"This Health Monitoring may lead to dedicated status messages available for Flight control computer • To store maintenance operation historical Using embedded or separated memory, the Health monitoring status shall at least integrate actuator and main pieces maintenance operations, A/B/C checks, …  • To store a working historical (Flight Hour, Flight Cycle, ON/OFF cycles, …) Using embedded or separated memory, the Health monitoring status shall at least integrate actuator and main pieces Flight Hour, Flight Cycle, ON/OFF cycles,… so that a reliable working historical can be established • To store the configuration and the location of the equipment"}
 { "text":"Using Hardware or Software pin programming, this Health Monitoring function shall be able to check the consistency between identification data from Flight control computer and data from the actuator"}
-{ "text":"This function shall also include at least actuator and main sub-assemblies configuration (e.g"}
+{ "text":"This function shall also include at least actuator and main sub-assemblies configuration (e.g. actuator P/N and S/N, main pieces P/N and S/N, list of LRIs…).and its type location (e.g. Left Inboard Spoiler actuator)"}
 { "text":"2.1.5.5.2 Health Monitoring Algorithms The following types of Health Monitoring algorithms shall be assessed and if relevant they shall be developed, integrated in the Health Monitoring function and validated by the Supplier :  - Fatigue damaging computation, - Endurance severity computation, - Maximum mechanical backlash exceeding,  "}
 { "text":"- Global mechanical efficiency degradation, - Abnormal vibratory signature, - Friction and damping coefficient degradation, - Electric motor damaging, - Anticipated electronic component ageing, - Etc…  The health monitoring algorithms shall be able to perform :  - Diagnosis: detection of degradation before the failure is effective, - Prognosis: assessment of LRU or LRI remaining life before the failure is effective"}
 { "text":"All the algorithms integrated into the Health Monitoring function shall be detailed and  substantiated by the supplier and then agreed with the purchaser"}
@@ -332,7 +330,7 @@
 { "text":"Voltage spikes: The unit shall withstand without degradation the voltage spikes shown on figure hereafter"}
 { "text":"Voltage spike envelop  Voltage decrease without power supply: When the equipment is not connected, voltage across any component storing energy shall decrease below 50 V in less than 3 minutes"}
 { "text":"Reverse Polarity: Reverse polarity voltage application on equipment shall be prevented by fool-proof design"}
-{ "text":"erroneous wiring installation) equipment may be damaged but it shall not cause an unsafe condition"}
+{ "text":"In case of permanent reverse voltage application (e.g. erroneous wiring installation) equipment may be damaged but it shall not cause an unsafe condition"}
 { "text":"Appropriate monitoring may be implemented to provide diagnostic of reverse polarity application"}
 { "text":"Power generation: The supplier shall define the maximum peak power reversed by the equipment owner various time durations (100 ms, 1 s, 10 s...) for any normal or abnormal operating condition:  • TBA W during TBA s • TBA W during TBA s • .."}
 { "text":"Current unbalance: During normal operation in steady-state conditions, current unbalance between +270VDC and -270 VDC terminals shall not exceed 2A"}
@@ -377,7 +375,7 @@
 { "text":"The equipment shall be protected against inadvertent application of 28VDC, 115 VAC, 540 VDC or ground on one or more pins of the connectors (see ABD0100.1.9)"}
 { "text":"A failure induced by the above inadvertent application of power supply on one or several I/Os shall be limited to these I/Os"}
 { "text":"The equipment shall be protected against internal power supply failure (see ABD0100.1.9)"}
-{ "text":"2.1.9.3.2 µAFDX Interface 2.1.9.3.2.1 µAFDX requirements The EMA ECU shall comply with requirements defined in “AFDX Micro End/System Detailed Functional Specification” ref N4230SP0910610"}
+{ "text":"2.1.9.3.2 µAFDX Interface 2.1.9.3.2.1 µAFDX requirements The EMA ECU shall comply with requirements defined in “AFDX Micro End/System Detailed Functional Specification” ref. N4230SP0910610"}
 { "text":"Both COM and MON lanes shall be interfaced with two redundant µAFDX channels as per the following figure:        µADFX communication  COM and MON lanes shall implement a Single Bus Interface (SBI) with one upstream port and two downstream ports in order to multiplex the messages between ECU lanes and both µAFDX channels (refer to the following figure for details)"}
 { "text":"COM and MON units shall check the integrity of the frames received on both micro End/System ("}
 { "text":"If the µAFDX frames are received valid, COM lane shall use data from Channel A by default"}
@@ -388,9 +386,9 @@
 { "text":"The acquisition system shall indicate to the microprocessor whether messages have been refreshed"}
 { "text":"Refresh rate shall have a maximum jitter of 1ms"}
 { "text":"COM and MON lanes shall implement two micro End Systems able to receive (resp"}
-{ "text":"2.1.9.3.2.2 Input / output processing frequency Input / Output processing frequency shall be defined in accordance with “ AFDX Micro End-System Detailed Functional Specification” ref N4230SP0910610"}
+{ "text":"2.1.9.3.2.2 Input / output processing frequency Input / Output processing frequency shall be defined in accordance with “ AFDX Micro End-System Detailed Functional Specification” ref. N4230SP0910610"}
 { "text":"Cycle duration accuracy shall be better than 1/1000 of the cycle duration"}
-{ "text":"2.1.9.3.2.3 Input / output processing performance Input / Output processing performance shall be defined in accordance with “ AFDX Micro End-System Detailed Functional Specification” ref N4230SP0910610"}
+{ "text":"2.1.9.3.2.3 Input / output processing performance Input / Output processing performance shall be defined in accordance with “ AFDX Micro End-System Detailed Functional Specification” ref. N4230SP0910610"}
 { "text":"The performances provided below shall be achieved whatever environmental and supply ECU conditions (except during high-energy radio frequency and during lightning strike pulses)"}
 { "text":"Considering the operating range of each input, the Supplier shall make sure that computation saturation is avoided"}
 { "text":"Considering the application software cycle of each analogue input, the Supplier shall make sure that aliasing problems are avoided"}
@@ -557,8 +555,7 @@
 { "text":"The Supplier shall comply with ABD0100.1.7§4 Overheat Protection and ABD0100.1.9 §2.3.1 Heat Dissipation"}
 { "text":"Equipment design shall optimize heat dissipation (subcomponents layout, fins, housing colour…)"}
 { "text":"Equipment design shall minimize heat production"}
-{ "text":"The Supplier shall provide a thermal model (MATLAB SIMULINK interface) to cover : •  The temperature distribution inside the unit, in normal operating conditions, •  The heat dissipation (Initial value, value for a mature equipment, value for worst case, e.g"}
-{ "text":"failure case such as short circuits), depending on thermal environment parameters such as ambient temperature, convection coefficient, radiative environment or heat fluxes; the format and the level of detail of which will be defined by Airbus during concept and development phases"}
+{ "text":"The Supplier shall provide a thermal model (MATLAB SIMULINK interface) to cover : •  The temperature distribution inside the unit, in normal operating conditions, •  The heat dissipation (Initial value, value for a mature equipment, value for worst case, e.g. failure case such as short circuits), depending on thermal environment parameters such as ambient temperature, convection coefficient, radiative environment or heat fluxes; the format and the level of detail of which will be defined by Airbus during concept and development phases"}
 { "text":"The maximum skin temperature of the mechanical parts shall not exceed 100°C (see § 2.1.6.1.9 – Maximum Skin Temperature) during a complete flight without extra-ventilation"}
 { "text":"The maximum skin temperature of the electronic housing shall not exceed 100°C (see § 2.1.6.1.9 – Maximum Skin Temperature)during a complete flight without extra-ventilation"}
 { "text":"Temperatures in failure conditions shall be provided to Purchaser for approval"}
@@ -566,8 +563,7 @@
 { "text":"The locking of mechanical parts shall not be achieved by gluing process"}
 { "text":"Locking devices for any equipment subassembly or/and components shall be designed as a mechanical positive locking"}
 { "text":"Each removable bolt, screw, nut, pin or other removable fastener shall incorporate two separate locking devices if: • Its loss could result in a reduction of performances or lead to a malfunctioning; • Its loss could have a non-negligible impact on the unit safety or reliability"}
-{ "text":"The detailed locking policy shall be provided to the purchaser for approval 2.1.11.9 Protection Devices All electromagnetic components (e.g"}
-{ "text":"coils, relays, inductors, actuators, pumps, motors, etc.) shall be fitted with protection devices to minimize the generation of voltage transients during their operation"}
+{ "text":"The detailed locking policy shall be provided to the purchaser for approval 2.1.11.9 Protection Devices All electromagnetic components (e.g. coils, relays, inductors, actuators, pumps, motors, etc.) shall be fitted with protection devices to minimize the generation of voltage transients during their operation"}
 { "text":"These protection devices shall be selected to ensure that these transient voltages do not damage any sensitive control and switching circuits"}
 { "text":"2.1.11.10 Lightning and EMC Protection Devices The unit shall not be damaged, and its operation shall not be disturbed when subjected to the specified level of induced voltage and current resulting from lightning strikes and external radiations"}
 { "text":"2.1.12 Mechanical requirements The Supplier shall comply with ABD0100.1.7 Mechanical Requirements"}
@@ -716,7 +712,7 @@
 { "text":"2.2.4.2 Decompression N/A 2.2.4.3 Overpressure N/A 2.2.5 Temperature variations The equipments shall meet the requirements of EUROCAE ED14/ RTCA DO160 Section 5, Cat"}
 { "text":"2.2.6 Humidity The equipments shall meet the requirements of EUROCAE ED14/ RTCA DO160 Section 6, Cat"}
 { "text":"2.2.7 Shocks and Crash safety 2.2.7.1 Operational shock and Crash safety The equipments shall meet the requirements of EUROCAE ED14/ RTCA DO160 Section 7, Cat"}
-{ "text":"Only “operational shocks” shall be considered, the unit shall operate during the test with ref to ABD0100.1.2, paragraph 1.5.1"}
+{ "text":"Only “operational shocks” shall be considered, the unit shall operate during the test with ref. to ABD0100.1.2, paragraph 1.5.1"}
 { "text":"2.2.7.2 Shock due to Fan Blade Out TBD 2.2.7.3 Bench Handling Shock The equipments shall meet the requirements of MIL STD 810F Method 516.5 Procedure VI"}
 { "text":"2.2.7.4 Shipping Container Shock The equipments shall meet the requirements of MIL STD 810F Method 516.5 Procedure II"}
 { "text":"2.2.8 Vibrations 2.2.8.1 Operational Vibrations The equipment shall meet the requirements of EUROCAE ED14 / RTCA DO160 Section 8, Cat R, Curve E & E1 (3 hours Endurance level (repeat in all 3 axes))"}
@@ -880,7 +876,7 @@
 { "text":"Watchdog consequence shall be discussed with the purchaser"}
 { "text":"In case of abnormal results (div by zero, overflow, underflow), the affected lane (COM or MON) shall indicate the failure on µAFDX bus using BFSYS status bit"}
 { "text":"Activities, as specified in RTCA/EUROCAE D0178/ED-12, appropriate to this level shall be completed"}
-{ "text":"partitioning, dissimilarity) must only be achieved with agreement of the certification authorities"}
+{ "text":"Reduction of the software level by applying special design techniques (e.g. partitioning, dissimilarity) must only be achieved with agreement of the certification authorities"}
 { "text":"If the software level, initially determined by safety objectives, shall be increased for commercial reasons, the requirements in section TBD shall be considered"}
 { "text":"2.4.2  Partitioning/Segregation The objectives of ABD0100.1.10 section 7, RTCA/DO-178 section 2.3.1 and the explanation provided in RTCA/DO-248 section 4.14 shall be considered"}
 { "text":"In addition the following data has been identified as requiring frequent modification and therefore the software design must be such that this data may be changed efficiently: TBD"}
@@ -889,12 +885,11 @@
 { "text":"2.4.4 Software Development Specific Features 2.4.4.1 Development Methodologies The production of software shall be done according to the mandatory guidelines of RTCA/DO-178, ABD0100.1.10, ABD0100.2.4 and applicable CRIs"}
 { "text":"The policy for the intended use of IEEE floating point computation shall be described in the Plan for Software Aspects of Certification (PSAC) and detailed in Software Design and code Standards"}
 { "text":"It shall cover: • Selected options of the standard, • Operands relative precision problems"}
-{ "text":"2.4.4.2 Languages Programming language: • The software development shall be carried out using structured languages, like C ANSI or ADA 83, • Usage of object orientated programming languages (e.g"}
-{ "text":"C++ or JAVA) shall be evaluated against security objectives and shall be mutually agreed between purchaser and applicant"}
+{ "text":"2.4.4.2 Languages Programming language: • The software development shall be carried out using structured languages, like C ANSI or ADA 83, • Usage of object orientated programming languages (e.g. C++ or JAVA) shall be evaluated against security objectives and shall be mutually agreed between purchaser and applicant"}
 { "text":"When object-oriented programming languages are used, a safe subset of object-orientated features shall be defined and an increased verification effort shall be considered,  • Features with dynamic run-time behaviour shall be avoided"}
 { "text":"No dynamic objects shall be created or destroyed during run-time, • Usage of pointers shall be limited to compiler-internal mechanisms"}
 { "text":"If there is reason to introduce further pointer programming techniques, the chosen mechanisms shall be discussed with and agreed by the purchaser during the project’s planning phase, • Usage of assembler language shall be limited to reasonable cases for time critical modules"}
-{ "text":"usage of CPU-registers for special purposes or cache memory) shall be justified and mentioned within the Software Accomplishment Summary"}
+{ "text":"Compiler Considerations: • Usage of special software dependent resources (e.g. usage of CPU-registers for special purposes or cache memory) shall be justified and mentioned within the Software Accomplishment Summary"}
 { "text":"2.4.4.3 Tool Specification Assessment and qualification of software development tools shall be in accordance with RTCA/DO-178 section 12.2"}
 { "text":"For the proposed software development the following tools will be used, under the headings as stated below: - Requirements and Design tools: • If the software requirements are developed with a tool using a formalized language, the requirements contained in applicable CRIs shall be taken into account - Code generation tools: • If code generators are used, the requirements contained in applicable CRIs shall be taken into account - Verification tools: • Use of a Code Checker tool shall be mandatory, • Use of Test Tools shall be mandatory - Tools for supporting integral processes: • Integral processes like configuration management, change management and problem reporting shall be handled with appropriate tools"}
 { "text":"2.4.4.4 Specification of Commercial Off The Shelf (COTS) COTS software parts and development data shall be provided in accordance with the requirements of RTCA/DO-178 section 2.4"}
@@ -912,8 +907,7 @@
 { "text":"In case that the implementation of a Real Time Monitor is necessary for monitoring a (safety critical) function of equipment, the following requirements shall be taken into account: • The Real Time Monitor shall be assigned the highest priority in the scheduling cycle, • The timing requirements that apply for the monitored function shall determine the minimum scheduling frequency of the Real Time Monitor"}
 { "text":"2.4.10 Real Time Operating System Software Specific embedded or loadable testing S/W shall be developed for testing purposes"}
 { "text":"For every equipments : • A real time scheduling mechanism shall control the operational software tasks"}
-{ "text":"ABD0100.1.10 section 2 shall be considered for the selection of the appropriate mechanism, • If the mechanism has no strictly predictable time behaviour, as e.g"}
-{ "text":"main loops applying polling mechanism, additional design precautions and verification measures shall be taken to fulfil the real time requirements of the system, • If the real time scheduler is COTS software, section 2.4.4.4 of this specification shall be applied"}
+{ "text":"ABD0100.1.10 section 2 shall be considered for the selection of the appropriate mechanism, • If the mechanism has no strictly predictable time behaviour, as e.g. main loops applying polling mechanism, additional design precautions and verification measures shall be taken to fulfil the real time requirements of the system, • If the real time scheduler is COTS software, section 2.4.4.4 of this specification shall be applied"}
 { "text":"The failure behaviour shall be analysed in respect to the FMEA or Fault tree analysis"}
 { "text":"The EMAs shall be capable of meeting the following safety objectives throughout their total declared service life when operated in the environmental conditions defined in this specification"}
 { "text":"All failures or combination of failures that can affect the safety shall be stated including their Failure Probabilities"}
@@ -925,7 +919,7 @@
 { "text":"increase of MTBF, accessibility or improvement of removal procedure, etc.) will be preferred, compared with a solution leading to an increase in equipment architecture complexity (i.e"}
 { "text":"If the last case is envisaged, it shall be discussed during an equipment review before approval"}
 { "text":"2.5.1.2.2 Service and Useful Life The objective for service and useful life shall be the NSA aircraft service life"}
-{ "text":"fatigue, endurance…), Design Service Goals and useful life shall be the most severe of the following A/C lives"}
+{ "text":"For each sizing criteria of the actuator (e.g. fatigue, endurance…), Design Service Goals and useful life shall be the most severe of the following A/C lives"}
 { "text":"The life of the actuator in active mode with specified duty cycles in §2.1.6.4 – Duty Cycles shall be the earlier between - 30 years, - Or 100 000 flights / 150 000 flight hours (flight duration is 1.5 hour)"}
 { "text":"The life of the actuator in anti-extension mode with specified duty cycles in §2.1.6.4 - Duty Cycles shall be: - 20 000 flights / 30 000 flight hours (TBC) (flight duration is 1.5 hour)"}
 { "text":"The EMAs shall be capable of meeting the following design/reliability objectives throughout their total declared service life when operated in the environmental conditions defined in this specification"}
@@ -947,8 +941,8 @@
 { "text":"The supplier will categorize and recommend disposition of these failures either as safety significant requiring a scheduled inspection, or a non-safety significant when the analysis supports that the failure can tolerate dormancy for the life of the aircraft"}
 { "text":"The safety relevant items/functions shall be adequately isolated; i.e"}
 { "text":"failure of one component/sub-function shall not cause a failure of another one"}
-{ "text":"design errors, quality issues, signal distortion, requirement errors and environmental factors) shall be analysed in the Common Mode Analysis"}
-{ "text":"• Actuator disconnection  The analysis shall consider failure sequences of the scenarios (e.g"}
+{ "text":"Possible common mode faults (e.g. design errors, quality issues, signal distortion, requirement errors and environmental factors) shall be analysed in the Common Mode Analysis"}
+{ "text":"• Actuator disconnection  The analysis shall consider failure sequences of the scenarios (e.g. failures occur prior or during flight)"}
 { "text":"Incorrect assembly and adjustment that could result in a malfunction shall not be possible"}
 { "text":"Safety relevant failures which are dormant shall be avoided"}
 { "text":"The supplier shall participate together with the purchaser to the definition of all relevant means of reducing dormancy time as far as possible (the objective is to minimize CMR (Certification Maintenance Requirement) and automatic tests,…)"}
@@ -982,7 +976,7 @@
 { "text":"Equipment designs shall take benefit of lessons learnt from supplier previous programs"}
 { "text":"The impact analysis of options on the aircraft supportability performances (operational reliability, maintainability, testability, maintenance program...) shall be provided and approved by the Purchaser"}
 { "text":"Concepts featuring new technology shall be subjected to rigorous evaluation against reliability, maintainability, reparability and supportability criteria before final concept selection"}
-{ "text":"2.6.1.1 Maintainability and Maintenance Evaluation Supplier shall feed with details the “Maintainability & Maintenance Evaluation” document, ref X00FM0500302 to be presented as the initial supplier proposal and the final version shall be delivered and validated at the CDR"}
+{ "text":"2.6.1.1 Maintainability and Maintenance Evaluation Supplier shall feed with details the “Maintainability & Maintenance Evaluation” document, ref. X00FM0500302 to be presented as the initial supplier proposal and the final version shall be delivered and validated at the CDR"}
 { "text":"2.6.1.2 Latched Failures The following failures shall be latched until the end of the flight: TBA (Objective: none)"}
 { "text":"2.6.2 Maintenance Concept The EMAs maintenance program concept should be a flexible concept, i.e"}
 { "text":"Fault tolerance principles or component intrinsic reliability shall be adopted when appropriate to achieve operational reliability targets and minimize line maintenance work"}
@@ -1034,7 +1028,7 @@
 { "text":"Where wire locking of a component or assembly is required, wire lock pigtails should be protected to avoid injury of pilots or maintenance crew"}
 { "text":"Electrical connectors shall be orientated towards fixed structure side"}
 { "text":"To prevent fluids from entering, no plugs or receptacles shall be installed vertically"}
-{ "text":"Electrical connectors to interface with A/C shall be arranged so that ingress of water into the plug connections be avoided (e.g"}
+{ "text":"Electrical connectors to interface with A/C shall be arranged so that ingress of water into the plug connections be avoided (e.g. drip loops) and installed where they cannot be damaged by the hydraulic fluid"}
 { "text":"All adjustment points, rigging marks shall be permanently identifiable and easily accessible:  When vertically installed, bolts should be fitted with their head uppermost and when this is not possible additional locking features shall be considered"}
 { "text":"Adjustment devices shall be locked so that the adjustment point cannot unintentionally be altered"}
 { "text":"Adjustment devices shall be provided with markings or indicators which show the extent and type of adjustment"}
@@ -1065,7 +1059,7 @@
 { "text":"All equipment, components, or items and their orientation, location, routing, and order shall be designed to ensure that all associated maintenance tasks are easy, intuitive, self-evident, and unambiguous to identify and to perform"}
 { "text":"Special care shall be taken to protect the equipment against the effects of mishandling, miss-operation or human errors during maintenance operations (through the MME, “Maintainability & Maintenance Evaluation”)"}
 { "text":"The equipment shall be designed wherever possible such that incorrect assembly, transposed connections and installations are impossible by means such as symmetry of attachments, locating spigots, different end spigots, different end fitting to be utilized"}
-{ "text":"Connections shall be arranged so that cross connection or wrong connection is impossible (e.g"}
+{ "text":"Connections shall be arranged so that cross connection or wrong connection is impossible (e.g. by segregation or differing cable lengths/sizes).The control of cable length by clipping is not considered to be an adequate safe guard against cross connection"}
 { "text":"It shall be impossible to install any equipment, component, or item in the wrong orientation, in the incorrect location, using improper routing, or in the wrong order"}
 { "text":"Screws which are not lock wired shall not include a lockwire hole"}
 { "text":"All rigging pins/locking devices shall be provided with warning flags that can be seen from the ground when device is installed"}
@@ -1128,8 +1122,8 @@
 { "text":"The Supplier shall maintain an example of each standard of equipment that is in Airline use, to enable queries originating from Airlines to be investigated"}
 { "text":"2.9 Packaging, Storage and Handling 2.9.1 Disposal Instructions If, by design, the equipment contains some sensitive components (impact on environment or personal) which need a dedicated procedure for recycling, end life storage, end life destruction, and other situations relative to the end life of the equipment, the Supplier shall identify those components and shall propose an adequate procedure"}
 { "text":"The manufacturer shall agree to the selection of such components and shall review the proposed procedure"}
-{ "text":"2.9.2 Equipment Transportation Requirements None 2.9.3 Packaging Storage and Handling Requirements The Supplier shall ensure that when packaging and/or storage devices (e.g"}
-{ "text":"The supplier shall also ensure that no parts, e.g"}
+{ "text":"2.9.2 Equipment Transportation Requirements None 2.9.3 Packaging Storage and Handling Requirements The Supplier shall ensure that when packaging and/or storage devices (e.g. dust covers, protective covers, blanking caps, etc) are fitted they comply with one or more of the following requirements:  • The equipment/item cannot be installed • That such devices are temporarily fitted with means to ensure that the installer removes them before installation, e.g. a red flag • That they are designed so that no damage or malfunction occurs if the equipment is operated"}
+{ "text":"The supplier shall also ensure that no parts, e.g. seals, can be inadvertently left on the equipment/item when the packing/storage devices are removed"}
 { "text":"The Supplier shall minimize the cost of storage and handling"}
 { "text":"The unit shall be delivered in neutral position"}
 { "text":"The electrical connectors shall be equipped with protective caps"}
@@ -1205,11 +1199,10 @@
 { "text":"A scatter coefficient of 6, 5.2 or 4.5 shall be used if respectively 1, 2 or 3 units are subjected to the test"}
 { "text":"The test shall then be continued to rupture of the unit, with an increased severity if necessary and in such a way that its results could be used to predict the fatigue life of the unit under a modified duty cycle"}
 { "text":"Bearing friction shall be represented"}
-{ "text":"Possible repair methods that may impact life (e.g"}
-{ "text":"chrome plating) shall be justified by test • Endurance test to cover 33 % of the specified life of the unit and all its components"}
+{ "text":"Possible repair methods that may impact life (e.g. chrome plating) shall be justified by test • Endurance test to cover 33 % of the specified life of the unit and all its components"}
 { "text":"100% of the specified endurance life shall be covered 3 years after A/C certification"}
 { "text":"The test shall then be continued to performance degradation (excessive wear, etc…) and limited to 200% of the specified endurance life"}
-{ "text":"The test shall be conducted with associated maintenance task (e.g"}
+{ "text":"The test shall be conducted with associated maintenance task (e.g. bearing re-lubrication) with a representative interval multiply by two (*2) in comparison with these defined in the maintenance plan (§ 2.6.6.1 – Maintenance Plan) • Environment test on the basis of DO 160 document • Failure tests possibly required to support the failure analysis and all certification issues • Production unit installation cycle test   "}
 { "text":"Equipment supplier shall provide the purchaser with qualification evidence as requested in ABD0100.2.8 paragraph 1.4.4.1: Qualification Activities to be performed before the first delivery and before the first flight test"}
 { "text":"3.8.1.4 Witnessing of Tests Purchaser may ask to witness any test in the supplier premises"}
 { "text":"3.8.2 Certification 3.8.2.1 Airworthiness Requirements The Supplier shall comply with any mandatory additional requirements (CRI : Certification Revue Item ) that are issued by the authorities during the design and certification processes (EASA, FAA and other authorities)"}
@@ -1288,7 +1281,7 @@
 { "text":"The Supplier may have a different proposal"}
 { "text":"The documents shall be delivered two weeks before the mentioned review under heading Due Dates"}
 { "text":"5.2 Appendix 2 : SABER Model Requirements Objectives:  This appendix contains the requirements that supplier shall take into account to perform an actuator SABER model"}
-{ "text":"This model shall be delivered to the purchaser in order to perform following studies: • Sizing of the NSA A/C electrical network by coupling actuator SABER models with NSA   electrical network SABER model and flight control computer SABER models, • Verification of the compliance with electrical directives provided in document “electrical System Virtual Prototyping NSA SABER models requirements” ref V24RP0607448 issue2, • Electrical validation and verification of flight conditions in particular cases not tested on Iron-Bird"}
+{ "text":"This model shall be delivered to the purchaser in order to perform following studies: • Sizing of the NSA A/C electrical network by coupling actuator SABER models with NSA   electrical network SABER model and flight control computer SABER models, • Verification of the compliance with electrical directives provided in document “electrical System Virtual Prototyping NSA SABER models requirements” ref. V24RP0607448 issue2, • Electrical validation and verification of flight conditions in particular cases not tested on Iron-Bird"}
 { "text":"Model Description:  The actuator model shall be based on the main functions that allow the evaluation of its electrical behaviour as described here above"}
 { "text":"Therefore, an adequate level of detail shall be used for each part identified on the following schematic"}
 { "text":"TBA  The supplier shall propose Inputs and Outputs parameters judged relevant"}

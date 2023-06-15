@@ -11,19 +11,22 @@ def sentences_fixing(sentences):
     e.g. might be considered as the end of a sentence, and it should not.)
     """
     fixed_sentences = []
-    eg = "e.g."
+    eg = "e.g"
+    eg_parenthesis = "(e.g"
     ref = "ref"
+    ref_parenthesis = "(ref"
     broken = False
     for sentence in sentences:
         if broken:
             if fixed_sentences:
-                new_sentence = fixed_sentences.pop() + " " + sentence
+                new_sentence = fixed_sentences.pop() + ". " + sentence
             else:
                 new_sentence = sentences[0]
             fixed_sentences.append(new_sentence)
         else:
             fixed_sentences.append(sentence)
-        if sentence.endswith(eg) or sentence.endswith(ref):
+        if sentence.endswith(eg) or sentence.endswith(eg_parenthesis) or sentence.endswith(ref) or \
+                sentence.endswith(ref_parenthesis):
             broken = True
         else:
             if broken:

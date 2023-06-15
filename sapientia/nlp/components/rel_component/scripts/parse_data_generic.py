@@ -13,8 +13,9 @@ msg = Printer()
 
 # TODO: define your labels used for annotation either as "symmetrical" or "directed"
 SYMM_LABELS = ["COLLABORATION", "CONNECTION", "ALTERNATIVE_LABEL"]
-DIRECTED_LABELS = ["RESPONSIBLE", "PROVIDE", "PROVIDED", "DEFINED_BY", "COMPLY_WITH", "COMPOSED_BY", "HAS_FEATURE",
-                   "HAS_VALUE", "IN_UNIT", "PERFORM", "OPERATION", "COMMUNICATE", "IN_CONDITION", "IN_PHASE", "CONTROL"]
+DIRECTED_LABELS = ["RESPONSIBLE", "PROVIDE", "PROVIDED", "DEFINED_BY", "COMPLY_WITH", "APPROVAL", "REJECTION",
+                   "COMPOSED_BY", "HAS_FEATURE", "HAS_VALUE", "IN_UNIT", "PERFORM", "OPERATION", "COMMUNICATE",
+                   "IN_CONDITION", "IN_PHASE", "CONTROL"]
 
 # TODO: define splits for train/dev/test. What is not in test or dev, will be used as train.
 test_portion = 0.1#0.2
