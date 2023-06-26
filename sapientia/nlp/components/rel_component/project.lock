@@ -1,18 +1,18 @@
 data:
   cmd: python -m spacy run data
   script:
-    - python ./scripts/parse_data.py assets/annotations.jsonl data/train.spacy data/dev.spacy
-      data/test.spacy
+    - python ./scripts/parse_data_generic.py assets/annotations.jsonl data/train.spacy
+      data/dev.spacy data/test.spacy
   deps:
     - path: assets/annotations.jsonl
-      md5: bb716e30638b01ee15d82b7011c447d2
+      md5: e0a7b364a46ac0bd71ab829fb7b96e53
   outs:
     - path: data/train.spacy
-      md5: 8674c3ddffbe5fd55de488a4050fd6f8
+      md5: 8351194b1fc887bda9f81344f6b982c6
     - path: data/dev.spacy
-      md5: 317a662ff7be94dfad718410fb1c178a
-    - path: data/test.spacy
       md5: e77a6e27e2dc30accb80b5a3d4840b34
+    - path: data/test.spacy
+      md5: 9325ff34c181318e24e74469188ea004
   spacy_version: 3.5.0
   spacy_git_version: Unknown
 train_joint_cpu:
@@ -22,12 +22,12 @@ train_joint_cpu:
       data/train.spacy --paths.dev data/dev.spacy -c ./scripts/custom_functions.py
   deps:
     - path: data/train.spacy
-      md5: 8674c3ddffbe5fd55de488a4050fd6f8
+      md5: 8351194b1fc887bda9f81344f6b982c6
     - path: data/dev.spacy
       md5: e77a6e27e2dc30accb80b5a3d4840b34
   outs:
     - path: training/model-best
-      md5: d8b95db9c266f2e01e2f80a72b11e05d
+      md5: 9e1ca47731aa4acb1fd2be697e5bb62b
   spacy_version: 3.5.0
   spacy_git_version: Unknown
 train_cpu:

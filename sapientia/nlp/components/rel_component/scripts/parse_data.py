@@ -11,21 +11,25 @@ from wasabi import Printer
 
 msg = Printer()
 
-SYMM_LABELS = ["COLLABORATION", "CONNECTION"]
+SYMM_LABELS = ["COLLABORATION", "CONNECTION", "ALTERNATIVE_LABEL"]
 MAP_LABELS = {
-    "COLLABORATION": "Collaborates",
-    "PROVIDE": "Provides", 
+    "RESPONSIBLE": "Responsible of",
+    "PROVIDE": "Provides",
+    "PROVIDED": "Provided",
     "DEFINED_BY": "Defined by",
-    "COMPLY_WITH": "Complies with", 
+    "COMPLY_WITH": "Complies with",
+    "APPROVAL": "Approves",
+    "REJECTION": "Rejects",
     "COMPOSED_BY": "Composed by", 
     "HAS_FEATURE": "Has feature", 
-    "HAS_VALUE": "Has value", 
+    "HAS_VALUE": "Has value",
+    "IN_UNIT": "In unit",
     "PERFORM": "Performs", 
-    "SUBJECT": "Subject", 
+    "OPERATION": "Operates",
     "COMMUNICATE": "Communicates", 
-    "IN_CONDITION": "In condition", 
+    "IN_CONDITION": "In condition",
+    "IN_PHASE": "In phase",
     "CONTROL": "Controls",
-    "CONNECTION": "Connects",
 }
 
 
