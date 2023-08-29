@@ -6,6 +6,7 @@ vars:
   annotations: "assets/annotations.jsonl"
   tok2vec_config: "configs/rel_tok2vec.cfg"
   trf_config: "configs/rel_trf.cfg"
+  rel_config: "configs/rel.cfg"
   joint_config: "configs/rel_joint.cfg"
   train_file: "data/train.spacy"
   dev_file: "data/dev.spacy"
@@ -62,6 +63,16 @@ commands:
     help: "Jointly train the NER and REL model on the CPU and evaluate on the dev corpus."
     script:
       - "python -m spacy train ${vars.joint_config} --output training --paths.train ${vars.train_file} --paths.dev ${vars.dev_file} -c ./scripts/custom_functions.py"
+    deps:
+      - ${vars.train_file}
+      - ${vars.dev_file}
+    outputs:
+      - ${vars.trained_model}
+
+  - name: "train_rel_cpu"
+    help: "Use a source NER model, train the REL model on the CPU and evaluate on the dev corpus."
+    script:
+      - "python -m spacy train ${vars.rel_config} --output training --paths.train ${vars.train_file} --paths.dev ${vars.dev_file} -c ./scripts/custom_functions.py"
     deps:
       - ${vars.train_file}
       - ${vars.dev_file}

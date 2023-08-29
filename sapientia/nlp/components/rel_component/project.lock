@@ -5,14 +5,14 @@ data:
       data/dev.spacy data/test.spacy
   deps:
     - path: assets/annotations.jsonl
-      md5: 5c749a83461d74addab8eeb481434c2e
+      md5: 38d21e16bb054ed5eaab15de5e828bea
   outs:
     - path: data/train.spacy
-      md5: 4482018b38b844f2133c11d4a1d9742a
+      md5: cba4eede1393571167acf36821cffc83
     - path: data/dev.spacy
-      md5: e68fadcbd046bb7f7633fdafb1f204f6
+      md5: 21d07048b32fc95d63c0307a37a5bf4f
     - path: data/test.spacy
-      md5: 488854b18b7dc10b7c02983d376566bd
+      md5: 8cafb2064c6def08ee87701d7d933f7a
   spacy_version: 3.5.0
   spacy_git_version: Unknown
 train_joint_cpu:
@@ -52,5 +52,20 @@ clean:
     - rm -rf training/*
   deps: []
   outs: []
+  spacy_version: 3.5.0
+  spacy_git_version: Unknown
+train_rel_cpu:
+  cmd: python -m spacy run train_rel_cpu
+  script:
+    - python -m spacy train configs/rel.cfg --output training --paths.train data/train.spacy
+      --paths.dev data/dev.spacy -c ./scripts/custom_functions.py
+  deps:
+    - path: data/train.spacy
+      md5: cba4eede1393571167acf36821cffc83
+    - path: data/dev.spacy
+      md5: 21d07048b32fc95d63c0307a37a5bf4f
+  outs:
+    - path: training/model-best
+      md5: 08cf6a381f70e8db9efa4796e0be817c
   spacy_version: 3.5.0
   spacy_git_version: Unknown
