@@ -8,11 +8,11 @@ data:
       md5: 38d21e16bb054ed5eaab15de5e828bea
   outs:
     - path: data/train.spacy
-      md5: cba4eede1393571167acf36821cffc83
+      md5: 35e92d4e779c3f123675c0770623880d
     - path: data/dev.spacy
-      md5: 21d07048b32fc95d63c0307a37a5bf4f
+      md5: e551838624b5bc38e7128bdb70855778
     - path: data/test.spacy
-      md5: 8cafb2064c6def08ee87701d7d933f7a
+      md5: 9832583623d651c4cc761b3a28a5a208
   spacy_version: 3.5.0
   spacy_git_version: Unknown
 train_joint_cpu:
@@ -61,11 +61,11 @@ train_rel_cpu:
       --paths.dev data/dev.spacy -c ./scripts/custom_functions.py
   deps:
     - path: data/train.spacy
-      md5: cba4eede1393571167acf36821cffc83
+      md5: 35e92d4e779c3f123675c0770623880d
     - path: data/dev.spacy
-      md5: 21d07048b32fc95d63c0307a37a5bf4f
+      md5: e551838624b5bc38e7128bdb70855778
   outs:
     - path: training/model-best
-      md5: 08cf6a381f70e8db9efa4796e0be817c
+      md5: 0e1ec1538f2a0f1356f01c46955670df
   spacy_version: 3.5.0
   spacy_git_version: Unknown
