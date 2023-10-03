@@ -102,7 +102,6 @@ def named_entities_to_triples(named_entities):
     """
     triples = []
     for named_entity in named_entities:
-        #triples.append("rdf:type" + "(" + "_:" + named_entity["text"] + ", ""_:" + named_entity["label"] + ")")
         triples.append("rdf:type(" + named_entity["text"] + "," + named_entity["label"]+")")
     return triples
 

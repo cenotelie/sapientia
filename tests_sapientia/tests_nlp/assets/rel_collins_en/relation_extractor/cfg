@@ -1,0 +1,22 @@
+{
+  "labels":[
+    "DEFINED_BY",
+    "COMPLY_WITH",
+    "IN_CONDITION",
+    "IN_PHASE",
+    "RESPONSIBLE",
+    "PROVIDED",
+    "APPROVAL",
+    "COLLABORATION",
+    "OPERATION",
+    "COMPOSED_BY",
+    "ALTERNATIVE_LABEL",
+    "CONNECTION",
+    "PERFORM",
+    "COMMUNICATE",
+    "CONTROL",
+    "HAS_FEATURE",
+    "IN_UNIT"
+  ],
+  "threshold":0.5
+}
