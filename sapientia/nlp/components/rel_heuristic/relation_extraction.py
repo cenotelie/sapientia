@@ -194,6 +194,58 @@ def provided_extraction(relations):
     return provided_relations
 
 
+def approval_extraction(named_entities, text):
+    """
+    APPROVAL relation extraction (heuristic method)
+    :param named_entities: named entities
+    :param text: text
+    :return: approval relations
+    """
+    # TODO :
+    # - multiple sentence patterns (one approval and other things, multiple approvals)
+    # - eventually, more complex word patterns
+    approvals = []
+    roles = []
+    for named_entity in named_entities:
+        if named_entity["label"] == "ROLE":
+            roles.append(named_entity)
+    sentences = sentence_segmentation(text)
+    for role in roles:
+        sentence = get_sentence_for_named_entity(role, text)
+        sentence_start = get_sentence_start(sentence, sentences)
+        sentence_end = get_sentence_end(sentence, sentence_start)
+        if "validate" or "approve" in sentence:
+        # TODO :  sentences -> named entities : would be way easier / more efficient / less costly ?
+            for named_entity in named_entities:
+                if (named_entity["label"] == "DOCUMENT" or named_entity["label"] == "STANDARD" or
+                        named_entity["label"] == "CRITERIA" or named_entity["label"] == "UNIT" or
+                        named_entity["label"] == "PHASE"):
+                    if is_in_sentence(named_entity, sentence_start, sentence_end):
+                        if role["start_char"] < named_entity["start_char"]:
+                            approval_index = 0
+                            if "approve" in sentence:
+                                approval_index = get_sentence_start(sentence, sentences) + sentence.find("approve")
+                            if "validate" in sentence:
+                                approval_index = get_sentence_start(sentence, sentences) + sentence.find("validate")
+                        if role["start_char"] < approval_index < named_entity["start_char"]:
+                            approval = "APPROVAL(" + role["text"].lower() + "," + named_entity["text"].lower() + ")"
+                        if approval not in approvals:
+                            approvals.append(approval)
+    return approvals
+
+
+def rejection_extraction(named_entities, text):
+    """
+    REJECTION relation extraction (heuristic method)
+    :param named_entities: named entities
+    :param text: text
+    :return: rejection relations
+    """
+    # TODO
+    rejection = []
+    return rejection
+
+
 def definition_extraction(named_entities, text):
     """
     DEFINED_BY relation extraction (heuristic method)
@@ -201,6 +253,9 @@ def definition_extraction(named_entities, text):
     :param text: text
     :return: defined by relations
     """
+    # TODO :
+    #  - multiple "define" occurrences in the text
+    #  - more complex word patterns
     definition_relations = []
     documents = []
     for named_entity in named_entities:
@@ -220,7 +275,7 @@ def definition_extraction(named_entities, text):
                         # Text example : "the purchaser will provide a document in which the requirement are defined"
                         # Text example : "the purchaser has defined the requirements in the document"
                         is_definition = True
-                    if document["start_char"] > named_entity["start_char"] and ("define" or "defines") in sentence:
+                    if document["start_char"] > named_entity["start_char"] and "define" in sentence:
                         define_index = get_sentence_start(sentence, sentences) + sentence.find("define")
                         if document["start_char"] < define_index < named_entity["start_char"] or \
                                 define_index < named_entity["start_char"] < document["start_char"]:
@@ -241,6 +296,9 @@ def compliance_extraction(named_entities, text):
     :param text: text
     :return: comply with relations
     """
+    # TODO :
+    #  - multiple "complies" occurrences in the text
+    #  - more complex word patterns
     compliance_relations = []
     standards_and_criteria = []
     for named_entity in named_entities:
@@ -280,35 +338,125 @@ def composition_extraction(named_entities, text):
     :param text: text
     :return: composed by relations
     """
+    # TODO :
+    #  - multiple "composed" occurrences in the text
+    #  - more complex word patterns
     composition_relations = []
+    components = []
+    systems = []
+    hardware = []
+    for named_entity in named_entities:
+        if named_entity["label"] == "COMPONENT":
+            components.append(named_entity)
+        else:
+            if named_entity["label"] == "SYSTEM":
+                systems.append(named_entity)
+            else:
+                if named_entity["label"] == "HARDWARE":
+                    hardware.append(named_entity)
+    sentences = sentence_segmentation(text)
+    sentences_to_components_systems_and_hardware = {}
+    for sentence in sentences:
+        sentences_to_components_systems_and_hardware[sentence] = []
+    if components:
+        for component in components:
+            sentence = get_sentence_for_named_entity(component, text)
+            sentence_start = get_sentence_start(sentence, sentences)
+            elements = sentences_to_components_systems_and_hardware[sentence_start]
+            elements.append(component)
+            sentences_to_components_systems_and_hardware[sentence_start] = elements
+    if systems:
+        for system in systems:
+            sentence = get_sentence_for_named_entity(system, text)
+            sentence_start = get_sentence_start(sentence, sentences)
+            elements = sentences_to_components_systems_and_hardware[sentence_start]
+            elements.append(system)
+            sentences_to_components_systems_and_hardware[sentence_start] = elements
+    if hardware:
+        for element in hardware:
+            sentence = get_sentence_for_named_entity(element, text)
+            sentence_start = get_sentence_start(sentence, sentences)
+            elements = sentences_to_components_systems_and_hardware[sentence_start]
+            elements.append(element)
+            sentences_to_components_systems_and_hardware[sentence_start] = elements
+    for index, named_entities in sentences_to_components_systems_and_hardware.items():
+        sentence = sentences[index]
+        if "composed" in sentence:
+            composed_index = get_sentence_start(sentence, sentences) + sentence.find("composed")
+            composite = None
+            constituents = []
+            for named_entity in named_entities:
+                if composite is None:
+                    composite = named_entity
+                else:
+                    if composite["start_char"] < named_entity["start_char"] < composed_index:
+                        composite = named_entity
+                    else:
+                        if composite["start_char"] > composed_index:
+                            composite = named_entity
+            for named_entity in named_entities:
+                if named_entity["start_char"] > composed_index:
+                    constituents.append(named_entity)
+            for constituent in constituents:
+                composition = ("COMPOSED_BY(" + composite["text"].lower() + "," + constituent["text"].lower() + ")")
+                composition_relations.append(composition)
+        else:
+            if "compose" in sentence:
+                compose_index = 0
+                if "compose" in sentence:
+                    compose_index = get_sentence_start(sentence, sentences) + sentence.find("compose")
+                composite = None
+                constituents = []
+                for named_entity in named_entities:
+                    if composite is None:
+                        composite = named_entity
+                    else:
+                        if compose_index < composite["start_char"] < named_entity["start_char"]:
+                            composite = named_entity
+                        else:
+                            if compose_index > composite["start_char"]:
+                                composite = named_entity
+                for named_entity in named_entities:
+                    if named_entity["start_char"] < compose_index:
+                        constituents.append(named_entity)
+                for constituent in constituents:
+                    composition = ("COMPOSED_BY(" + composite["text"].lower() + "," + constituent["text"].lower() + ")")
+                    composition_relations.append(composition)
     return composition_relations
 
 
-def communication_extraction():
+def communication_extraction(named_entities, text):
     """
-
+    COMMUNICATION relation extraction (heuristic method)
+    :param named_entities: named entities
+    :param text: text
+    :return: communicate relations
     """
+    # TODO
     return []
 
 
-def controls_extraction():
+def controls_extraction(named_entities, text):
     """
 
     """
+    # TODO
     return []
 
 
-def connections_extraction():
+def connections_extraction(named_entities, text):
     """
 
     """
+    # TODO
     return []
 
 
-def alternative_labels_extraction():
+def alternative_labels_extraction(named_entities):
     """
 
     """
+    # TODO
     return []
 
 
@@ -376,6 +524,10 @@ def relations_extraction_heuristic(named_entities, text):
         relations = collaborations + responsibilities
         provided = provided_extraction(relations)
         relations.extend(provided)
+        approval = approval_extraction(named_entities, text)
+        relations.extend(approval)
+        rejection = rejection_extraction(named_entities, text)
+        relations.extend(rejection)
     if "DOCUMENT" in ner_labels:
         definitions = definition_extraction(named_entities, text)
         relations.extend(definitions)
@@ -385,15 +537,15 @@ def relations_extraction_heuristic(named_entities, text):
         relations.extend(compliance)
     if "COMPONENT" in ner_labels:
         if "SYSTEM" in ner_labels:
-            compositions = composition_extraction()
+            compositions = composition_extraction(named_entities, text)
             relations.extend(compositions)
-        communications = communication_extraction()
+        communications = communication_extraction(named_entities, text)
         relations.extend(communications)
-        controls = controls_extraction()
+        controls = controls_extraction(named_entities, text)
         relations.extend(controls)
-        connections = connections_extraction()
+        connections = connections_extraction(named_entities, text)
         relations.extend(connections)
-        alternative_labels = alternative_labels_extraction()
+        alternative_labels = alternative_labels_extraction(named_entities)
         relations.extend(alternative_labels)
         if "PARAMETER" in ner_labels:
             features = features_extraction()
